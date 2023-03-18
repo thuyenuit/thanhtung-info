@@ -2,346 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>bs4 social tiemeline - Bootdey.com</title>
+    <title>Thanh Tùng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <style type="text/css">
-      body {
-        background-color: #f0f6ff;
-        color: #28384d;
-      }
-      /*social */
-      .card-one {
-        position: relative;
-        width: 300px;
-        background: #fff;
-        box-shadow: 0 10px 7px -5px rgba(0, 0, 0, 0.4);
-      }
-      .card {
-        margin-bottom: 35px;
-        box-shadow: 0 10px 20px 0 rgba(26, 44, 57, 0.14);
-        border: none;
-      }
-      .follower-wrapper li {
-        list-style-type: none;
-        color: #fff;
-        display: inline-block;
-        float: left;
-        margin-right: 20px;
-      }
-      .social-profile {
-        color: #fff;
-      }
-      .social-profile a {
-        color: #fff;
-      }
-      .social-profile {
-        position: relative;
-        margin-bottom: 150px;
-      }
-      .social-profile .user-profile {
-        position: absolute;
-        bottom: -75px;
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        left: 50px;
-      }
-      .social-nav {
-        position: absolute;
-        bottom: 0;
-      }
-      .social-prof {
-        color: #333;
-        text-align: center;
-      }
-      .social-prof .wrapper {
-        width: 70%;
-        margin: auto;
-        margin-top: -100px;
-      }
-      .social-prof img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        margin-bottom: 20px;
-        border: 5px solid #fff;
-        /*border: 10px solid #70b5e6ee;*/
-      }
-      .social-prof h3 {
-        font-size: 36px;
-        font-weight: 700;
-        margin-bottom: 0;
-      }
-      .social-prof p {
-        font-size: 18px;
-      }
-      .social-prof .nav-tabs {
-        border: none;
-      }
-      .card .nav > li {
-        position: relative;
-        display: block;
-      }
-      .card .nav > li > a {
-        position: relative;
-        display: block;
-        padding: 10px 15px;
-        font-weight: 300;
-        border-radius: 4px;
-      }
-      .card .nav > li > a:focus,
-      .card .nav > li > a:hover {
-        text-decoration: none;
-        background-color: #eee;
-      }
-      .card .s-nav > li > a.active {
-        text-decoration: none;
-        background-color: #3afe;
-        color: #fff;
-      }
-      .text-blue {
-        color: #3afe;
-      }
-      ul.friend-list {
-        margin: 0;
-        padding: 0;
-      }
-      ul.friend-list li {
-        list-style-type: none;
-        display: flex;
-        align-items: center;
-      }
-      ul.friend-list li:hover {
-        background: rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-      }
-      ul.friend-list .left img {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        margin-right: 20px;
-      }
-      ul.friend-list li {
-        padding: 10px;
-      }
-      ul.friend-list .right h3 {
-        font-size: 16px;
-        font-weight: 700;
-        margin-bottom: 0;
-      }
-      ul.friend-list .right p {
-        font-size: 11px;
-        color: #6c757d;
-        margin: 0;
-      }
-      .social-timeline-card .dropdown-toggle::after {
-        display: none;
-      }
-      .info-card h4 {
-        font-size: 15px;
-      }
-      .info-card h2 {
-        font-size: 18px;
-        margin-bottom: 20px;
-      }
-      .social-about .social-info {
-        font-size: 16px;
-        margin-bottom: 20px;
-      }
-      .social-about p {
-        margin-bottom: 20px;
-      }
-      .info-card i {
-        color: #3afe;
-      }
-      .card-one {
-        position: relative;
-        width: 300px;
-        background: #fff;
-        box-shadow: 0 10px 7px -5px rgba(0, 0, 0, 0.4);
-      }
-      .card-one .header {
-        position: relative;
-        width: 100%;
-        height: 60px;
-        background-color: #3afe;
-      }
-      .card-one .header::before,
-      .card-one .header::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: inherit;
-      }
-      .card-one .header::before {
-        -webkit-transform: skewY(-8deg);
-        transform: skewY(-8deg);
-        -webkit-transform-origin: 100% 100%;
-        transform-origin: 100% 100%;
-      }
-      .card-one .header::after {
-        -webkit-transform: skewY(8deg);
-        transform: skewY(8deg);
-        -webkit-transform-origin: 0 100%;
-        transform-origin: 0 100%;
-      }
-      .card-one .header .avatar {
-        position: absolute;
-        left: 50%;
-        top: 30px;
-        margin-left: -50px;
-        z-index: 5;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        overflow: hidden;
-        background: #ccc;
-        border: 3px solid #fff;
-      }
-      .card-one .header .avatar img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        width: 100px;
-        height: auto;
-      }
-      .card-one h3 {
-        position: relative;
-        margin: 80px 0 30px;
-        text-align: center;
-      }
-      .card-one h3::after {
-        content: "";
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        margin-left: -15px;
-        width: 30px;
-        height: 1px;
-        background: #000;
-      }
-      .card-one .desc {
-        padding: 0 1rem 2rem;
-        text-align: center;
-        line-height: 1.5;
-        color: #777;
-      }
-      .card-one .contacts {
-        width: 200px;
-        max-width: 100%;
-        margin: 0 auto 3rem;
-      }
-      .card-one .contacts a {
-        display: block;
-        width: 33.333333%;
-        float: left;
-        text-align: center;
-        color: #c8c;
-      }
-      .card-one .contacts a:hover {
-        color: #333;
-      }
-      .card-one .contacts a:hover .fa::before {
-        color: #fff;
-      }
-      .card-one .contacts a:hover .fa::after {
-        width: 100%;
-        height: 100%;
-      }
-      .card-one .contacts a .fa {
-        position: relative;
-        width: 40px;
-        height: 40px;
-        line-height: 39px;
-        overflow: hidden;
-        text-align: center;
-        font-size: 1.3em;
-      }
-      .card-one .contacts a .fa:before {
-        position: relative;
-        z-index: 1;
-      }
-      .card-one .contacts a .fa::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        background: #c8c;
-        transition: width 0.3s, height 0.3s;
-      }
-      .card-one .contacts a:last-of-type .fa {
-        line-height: 36px;
-      }
-      .card-one .footer {
-        position: relative;
-        padding: 1rem;
-        background-color: #3afe;
-        text-align: center;
-      }
-      .card-one .footer a {
-        padding: 0 1rem;
-        color: #e2e2e2;
-        transition: color 0.4s;
-      }
-      .card-one .footer a:hover {
-        color: #c8c;
-      }
-      .card-one .footer::before {
-        content: "";
-        position: absolute;
-        top: -27px;
-        left: 50%;
-        margin-left: -15px;
-        border: 15px solid transparent;
-        border-bottom-color: #3afe;
-      }
-      .card-title,
-      .card .card-title,
-      .card-2 .card-title {
-        font-size: 16px;
-        font-weight: 700;
-        margin-bottom: 20px;
-      }
-      a {
-        color: #333;
-      }
-      .badge {
-        font-size: 12px;
-        line-height: 1;
-        padding: 0.375rem 0.5625rem;
-        font-weight: normal;
-      }
-      .badge-primary {
-        color: #447de8;
-        background-color: #e6edff;
-      }
-      .badge {
-        display: inline-block;
-        padding: 0.4em 0.5em;
-        font-size: 75%;
-        font-weight: 700;
-        line-height: 1;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: baseline;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-          border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-      }
-      /*end social*/
-    </style>
+    <link href="./style/main.css" rel="stylesheet" />
   </head>
   <body>
     <link
@@ -350,20 +17,6 @@
     />
     <main>
       <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="top-breadcrumb">
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">
-                    Social
-                  </li>
-                </ol>
-              </nav>
-            </div>
-          </div>
-        </div>
         <div
           class="img"
           style="
@@ -382,19 +35,18 @@
           <div class="card-body">
             <div class="wrapper">
               <img
-                src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                src="./images/avatar/avatar_18032023.jpeg"
                 alt=""
                 class="user-profile"
               />
-              <h3>Jane Smith</h3>
-              <p>Web Developer</p>
+              <h3>Nguyễn Thị Thanh Tùng</h3>
+              <p>Sales Manager</p>
             </div>
             <div class="row">
               <div class="col-lg-12">
                 <ul class="nav nav-tabs justify-content-center s-nav">
                   <li><a class="active" href="#">Timeline</a></li>
                   <li><a href="#">About</a></li>
-                  <li><a href="#">Friends</a></li>
                   <li><a href="#">Photos</a></li>
                   <li><a href="#">Videos</a></li>
                 </ul>
@@ -406,27 +58,28 @@
           <div class="col-lg-3">
             <div class="card">
               <div class="card-body">
-                <div class="h5 text-blue">@JaneSmith</div>
-                <div class="h7"><strong>Name :</strong> Jane Smith</div>
+                <div class="h5 text-blue">@ThanhTung</div>
                 <div class="h7">
-                  <strong>About :</strong> Developer of web applications,
-                  JavaScript, PHP, Java, Python, Ruby, Java, Node.js, etc.
+                  <strong>Name :</strong> Nguyễn Thị Thanh Tùng
+                </div>
+                <div class="h7">
+                  <strong>About :</strong> Sales manager at the Green Nature
+                  company in Ho Chi Minh city. Also, I have a part-time job
+                  teaching math and chemistry to high school students.
+                </div>
+                <div class="h7">
+                  <strong>Education :</strong>
+                  <br />
+                  <i> * 2016-2021</i>: Industrial University of Ho Chi Minh City
+                  <br />
+                  <i> * 2013-2015</i>: Trường THPT Phan Chu Trinh
+                  <br />
+                  <i> * 2009-2012</i>: Trường THCS Bùi Thị Xuân
+                </div>
+                <div class="h7">
+                  <strong>Languages :</strong> Vietnamese, Chinese.
                 </div>
               </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <div class="h6 text-muted">Followers</div>
-                  <div class="h5">5.2342</div>
-                </li>
-                <li class="list-group-item">
-                  <div class="h6 text-muted">Following</div>
-                  <div class="h5">6758</div>
-                </li>
-                <li class="list-group-item">
-                  <div class="h6 text-muted">Themes</div>
-                  <div class="h5">6758</div>
-                </li>
-              </ul>
             </div>
             <div class="card">
               <div class="card-body">
@@ -456,21 +109,21 @@
                   <div class="carousel-inner">
                     <div class="carousel-item">
                       <img
-                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        src="./images/image1_05022023.jpeg"
                         class="d-block w-100"
                         alt="..."
                       />
                     </div>
                     <div class="carousel-item">
                       <img
-                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        src="./images/image2_05022023.jpeg"
                         class="d-block w-100"
                         alt="..."
                       />
                     </div>
                     <div class="carousel-item active">
                       <img
-                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        src="./images/image3_05022023.jpeg"
                         class="d-block w-100"
                         alt="..."
                       />
@@ -504,111 +157,8 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 gedf-main">
-            <div class="card social-timeline-card">
-              <div class="card-header">
-                <ul
-                  class="nav nav-tabs card-header-tabs"
-                  id="myTab"
-                  role="tablist"
-                >
-                  <li class="nav-item">
-                    <a
-                      class="nav-link active"
-                      id="posts-tab"
-                      data-toggle="tab"
-                      href="#posts"
-                      role="tab"
-                      aria-controls="posts"
-                      aria-selected="true"
-                      >Share your insights</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      id="images-tab"
-                      data-toggle="tab"
-                      role="tab"
-                      aria-controls="images"
-                      aria-selected="false"
-                      href="#images"
-                      >Share Images</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <div class="tab-content" id="myTabContent">
-                  <div
-                    class="tab-pane fade active show"
-                    id="posts"
-                    role="tabpanel"
-                    aria-labelledby="posts-tab"
-                  >
-                    <div class="form-group">
-                      <label class="sr-only" for="message">post</label>
-                      <textarea
-                        class="form-control"
-                        id="message"
-                        rows="3"
-                        placeholder="What are you thinking?"
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div
-                    class="tab-pane fade"
-                    id="images"
-                    role="tabpanel"
-                    aria-labelledby="images-tab"
-                  >
-                    <div class="form-group">
-                      <div class="custom-file">
-                        <input
-                          type="file"
-                          class="custom-file-input"
-                          id="customFile"
-                        />
-                        <label class="custom-file-label" for="customFile"
-                          >Upload image</label
-                        >
-                      </div>
-                    </div>
-                    <div class="py-4"></div>
-                  </div>
-                </div>
-                <div class="btn-toolbar justify-content-between">
-                  <div class="btn-group">
-                    <button type="submit" class="btn btn-theme-primary">
-                      share
-                    </button>
-                  </div>
-                  <div class="btn-group">
-                    <button
-                      id="btnGroupDrop1"
-                      type="button"
-                      class="btn btn-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      <i class="fa fa-globe"></i>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                      <a class="dropdown-item" href="#"
-                        ><i class="fa fa-globe"></i> Public</a
-                      >
-                      <a class="dropdown-item" href="#"
-                        ><i class="fa fa-users"></i> Friends</a
-                      >
-                      <a class="dropdown-item" href="#"
-                        ><i class="fa fa-user"></i> Just me</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+          <div class="col-lg-9 gedf-main">
             <div class="card social-timeline-card">
               <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
@@ -619,63 +169,50 @@
                       <img
                         class="rounded-circle"
                         width="45"
-                        src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                        src="./images/avatar/avatar_18032023.jpeg"
                         alt=""
                       />
                     </div>
                     <div class="ml-2">
-                      <div class="h5 m-0 text-blue">@JaneSmith</div>
-                      <div class="h7 text-muted">Miracles Lee Cross</div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-link dropdown-toggle"
-                        type="button"
-                        id="gedf-drop11"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        <i class="fa fa-ellipsis-h"></i>
-                      </button>
-                      <div
-                        class="dropdown-menu dropdown-menu-right"
-                        aria-labelledby="gedf-drop11"
-                      >
-                        <div class="h6 dropdown-header">Configuration</div>
-                        <a class="dropdown-item" href="#">Save</a>
-                        <a class="dropdown-item" href="#">Hide</a>
-                        <a class="dropdown-item" href="#">Report</a>
-                      </div>
+                      <div class="h5 m-0 text-blue">@ThanhTung</div>
+                      <div class="h7 text-muted">05/02/2023</div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="card-body">
-                <div class="text-muted h7 mb-2">
-                  <i class="fa fa-clock-o"></i>10 min ago
+                <h5 class="card-title" style="color: #ffa200">
+                  Dịu dàng với e 1 chút, e cũng chỉ là 1 đứa trẻ trong vũ trụ mà
+                  thôi 🥴
+                </h5>
+                <div class="mb-10">
+                  <div class="row p-b-15">
+                    <div class="col-md-4">
+                      <img
+                        class="img-fluid width-100"
+                        src="./images/image1_05022023.jpeg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <img
+                        class="img-fluid width-100"
+                        src="./images/image2_05022023.jpeg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <img
+                        class="img-fluid width-100"
+                        src="./images/image3_05022023.jpeg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
                 </div>
-                <a class="card-link" href="#">
-                  <h5 class="card-title">
-                    Lorem ipsum dolor sit amet, consectetur adip.
-                  </h5>
-                </a>
-                <img src="img/gallery/1a.jpg" alt="" class="img-fluid" />
-              </div>
-              <div class="card-footer">
-                <a href="#" class="card-link"
-                  ><i class="fa fa-gittip"></i> Like</a
-                >
-                <a href="#" class="card-link"
-                  ><i class="fa fa-comment"></i> Comment</a
-                >
-                <a href="#" class="card-link"
-                  ><i class="fa fa-mail-forward"></i> Share</a
-                >
               </div>
             </div>
+
             <div class="card social-timeline-card">
               <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
@@ -686,81 +223,55 @@
                       <img
                         class="rounded-circle"
                         width="45"
-                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        src="./images/avatar/avatar_18032023.jpeg"
                         alt=""
                       />
                     </div>
                     <div class="ml-2">
-                      <div class="h5 m-0 text-blue">@JaneSmith</div>
-                      <div class="h7 text-muted">Miracles Lee Cross</div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-link dropdown-toggle"
-                        type="button"
-                        id="gedf-drop1"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        <i class="fa fa-ellipsis-h"></i>
-                      </button>
-                      <div
-                        class="dropdown-menu dropdown-menu-right"
-                        aria-labelledby="gedf-drop1"
-                      >
-                        <div class="h6 dropdown-header">Configuration</div>
-                        <a class="dropdown-item" href="#">Save</a>
-                        <a class="dropdown-item" href="#">Hide</a>
-                        <a class="dropdown-item" href="#">Report</a>
-                      </div>
+                      <div class="h5 m-0 text-blue">@ThanhTung</div>
+                      <div class="h7 text-muted">22/01/2023</div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="card-body">
-                <div class="text-muted h7 mb-2">
-                  <i class="fa fa-clock-o"></i> 10 min ago
+                <h5
+                  class="card-title"
+                  style="margin-bottom: 5px; color: #e9310f"
+                >
+                  Chào năm mới, chào 2023 🎇🎆
+                </h5>
+                <h5 class="card-title" style="color: #e9310f">
+                  Hy vọng một năm mới đầy niềm vui và hạnh phúc 🍀❤️
+                </h5>
+                <div class="mb-10">
+                  <div class="row p-b-15">
+                    <div class="col-md-4">
+                      <img
+                        class="img-fluid width-100"
+                        src="./images/image1_22012023.jpeg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <img
+                        class="img-fluid width-100"
+                        src="./images/image2_22012023.jpeg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <img
+                        class="img-fluid width-100"
+                        src="./images/image3_22012023.jpeg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
                 </div>
-                <a class="card-link" href="#">
-                  <h5 class="card-title">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Velit consectetur deserunt illo esse distinctio.
-                  </h5>
-                </a>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Magnam omnis nihil, aliquam est, voluptates officiis iure
-                  soluta alias vel odit, placeat reiciendis ut libero! Quas
-                  aliquid natus cumque quae repellendus. Lorem ipsum dolor sit
-                  amet consectetur adipisicing elit. Ipsa, excepturi.
-                  Doloremque, reprehenderit! Quos in maiores, soluta doloremque
-                  molestiae reiciendis libero expedita assumenda fuga quae.
-                  Consectetur id molestias itaque facere? Hic!
-                </p>
-                <div>
-                  <span class="badge badge-primary">JavaScript</span>
-                  <span class="badge badge-primary">Android</span>
-                  <span class="badge badge-primary">PHP</span>
-                  <span class="badge badge-primary">Node.js</span>
-                  <span class="badge badge-primary">Ruby</span>
-                  <span class="badge badge-primary">Paython</span>
-                </div>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="card-link"
-                  ><i class="fa fa-gittip"></i> Like</a
-                >
-                <a href="#" class="card-link"
-                  ><i class="fa fa-comment"></i> Comment</a
-                >
-                <a href="#" class="card-link"
-                  ><i class="fa fa-mail-forward"></i> Share</a
-                >
               </div>
             </div>
+
             <div class="card social-timeline-card">
               <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
@@ -771,189 +282,358 @@
                       <img
                         class="rounded-circle"
                         width="45"
-                        src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                        src="./images/avatar/avatar_18032023.jpeg"
                         alt=""
                       />
                     </div>
                     <div class="ml-2">
-                      <div class="h5 m-0 text-blue">@JaneSmith</div>
-                      <div class="h7 text-muted">Miracles Lee Cross</div>
+                      <div class="h5 m-0 text-blue">@ThanhTung</div>
+                      <div class="h7 text-muted">12/10/2022</div>
                     </div>
                   </div>
-                  <div>
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-link dropdown-toggle"
-                        type="button"
-                        id="gedf-drop2"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        <i class="fa fa-ellipsis-h"></i>
-                      </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5
+                  class="card-title"
+                  style="margin-bottom: 5px; color: #ffa200"
+                >
+                  VIETSTOCK 2022
+                </h5>
+                <div class="mb-10">
+                  <div class="p-b-15">
+                    <img
+                      class="img-fluid width-100"
+                      src="./images/viettel_stock.jpeg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card social-timeline-card">
+              <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="mr-2">
+                      <img
+                        class="rounded-circle"
+                        width="45"
+                        src="./images/avatar/avatar_18032023.jpeg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="ml-2">
+                      <div class="h5 m-0 text-blue">@ThanhTung</div>
                       <div
-                        class="dropdown-menu dropdown-menu-right"
-                        aria-labelledby="gedf-drop2"
+                        class="h7 text-muted"
+                        style="color: #ff7d00 !important"
                       >
-                        <div class="h6 dropdown-header">Configuration</div>
-                        <a class="dropdown-item" href="#">Save</a>
-                        <a class="dropdown-item" href="#">Hide</a>
-                        <a class="dropdown-item" href="#">Report</a>
+                        24/09/2022 - Happy Birthday
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="card-body">
-                <div class="text-muted h7 mb-2">
-                  <i class="fa fa-clock-o"></i> Hace 40 min
+                <h5
+                  class="card-title"
+                  style="margin-bottom: 5px; color: #e9310f"
+                >
+                  Cảm ơn tất cả mọi người đã luôn bên tôi trong mọi khoảnh khắc
+                  đặc biệt.
+                </h5>
+                <h5
+                  class="card-title"
+                  style="margin-bottom: 5px; color: #e9310f"
+                >
+                  Chúc cho bản thân tuổi mới sẽ luôn vui vẻ, mạnh mẽ và thành
+                  công hơn.
+                </h5>
+                <h5
+                  class="card-title"
+                  style="margin-bottom: 5px; color: #e9310f"
+                >
+                  Happy birthday to me
+                </h5>
+                <h5 class="card-title" style="color: #e9310f">祝我生日快乐</h5>
+                <div class="mb-10">
+                  <div class="p-b-15">
+                    <img
+                      style="
+                        width: 200px;
+                        padding-bottom: 5px;
+                        padding-right: 5px;
+                      "
+                      class="img-fluid width-100"
+                      src="./images/birthday07.jpeg"
+                      alt=""
+                    />
+                    <img
+                      style="
+                        width: 152px;
+                        padding-bottom: 5px;
+                        padding-right: 5px;
+                      "
+                      class="img-fluid width-100"
+                      src="./images/birthday06.jpeg"
+                      alt=""
+                    />
+                    <img
+                      style="width: 423px; padding-bottom: 5px"
+                      class="img-fluid width-100"
+                      src="./images/birthday05.jpeg"
+                      alt=""
+                    />
+                    <img
+                      style="
+                        width: 350px;
+                        padding-bottom: 5px;
+                        padding-right: 5px;
+                      "
+                      class="img-fluid width-100"
+                      src="./images/birthday04.jpeg"
+                      alt=""
+                    />
+                    <img
+                      style="
+                        width: 225px;
+                        padding-bottom: 5px;
+                        padding-right: 5px;
+                      "
+                      class="img-fluid width-100"
+                      src="./images/birthday03.jpeg"
+                      alt=""
+                    />
+                    <img
+                      style="width: 200px; padding-bottom: 5px"
+                      class="img-fluid width-100"
+                      src="./images/birthday02.jpeg"
+                      alt=""
+                    />
+                    <img
+                      class="img-fluid width-100"
+                      src="./images/birthday01.jpeg"
+                      alt=""
+                    />
+                  </div>
                 </div>
-                <a class="card-link" href="#">
-                  <h5 class="card-title">
-                    Totam non adipisci hic! Possimus ducimus amet, dolores illo
-                    ipsum quos cum.
-                  </h5>
-                </a>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                  sunt fugit reprehenderit consectetur exercitationem odio, quam
-                  nobis? Officiis, similique, harum voluptate, facilis voluptas
-                  pariatur dolorum tempora sapiente eius maxime quaerat.
-                  <a
-                    href="https://mega.nz/#!1J01nRIb!lMZ4B_DR2UWi9SRQK5TTzU1PmQpDtbZkMZjAIbv97hU"
-                    target="_blank"
-                    >https://mega.nz/#!1J01nRIb!lMZ4B_DR2UWi9SRQK5TTzU1PmQpDtbZkMZjAIbv97hU</a
-                  >
-                </p>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="card-link"
-                  ><i class="fa fa-gittip"></i> Like</a
-                >
-                <a href="#" class="card-link"
-                  ><i class="fa fa-comment"></i> Comment</a
-                >
-                <a href="#" class="card-link"
-                  ><i class="fa fa-mail-forward"></i> Share</a
-                >
               </div>
             </div>
-          </div>
-          <div class="col-lg-3">
+
             <div class="card social-timeline-card">
+              <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="mr-2">
+                      <img
+                        class="rounded-circle"
+                        width="45"
+                        src="./images/avatar/avatar_18032023.jpeg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="ml-2">
+                      <div class="h5 m-0 text-blue">@ThanhTung</div>
+                      <div class="h7 text-muted">04/08/2022</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="card-body">
-                <h5 class="card-title">People you may know</h5>
-                <ul class="friend-list">
-                  <li>
-                    <div class="left">
+                <h5
+                  class="card-title"
+                  style="margin-bottom: 5px; color: #ffa200"
+                >
+                  Cũng là làm việc mà nó lạaaaaaaa lắm😌
+                </h5>
+                <h5 class="card-title" style="color: #ffa200">
+                  P/s: ILDEX Việt Nam 2022
+                </h5>
+                <div class="mb-10">
+                  <div class="row p-b-15">
+                    <div class="col-md-4">
                       <img
-                        src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                        class="img-fluid width-100"
+                        src="./images/ildex_01.jpeg"
                         alt=""
                       />
                     </div>
-                    <div class="right">
-                      <h3>John Doe</h3>
-                      <p>10 Friends</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="left">
+                    <div class="col-md-4">
                       <img
-                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        class="img-fluid width-100"
+                        src="./images/ildex_03.jpeg"
                         alt=""
                       />
                     </div>
-                    <div class="right">
-                      <h3>John Doe</h3>
-                      <p>10 Friends</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="left">
+                    <div class="col-md-4">
                       <img
-                        src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                        class="img-fluid width-100"
+                        src="./images/ildex_02.jpeg"
                         alt=""
                       />
                     </div>
-                    <div class="right">
-                      <h3>John Doe</h3>
-                      <p>10 Friends</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="left">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card social-timeline-card">
+              <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="mr-2">
                       <img
-                        src="https://bootdey.com/img/Content/avatar/avatar4.png"
+                        class="rounded-circle"
+                        width="45"
+                        src="./images/avatar/avatar_18032023.jpeg"
                         alt=""
                       />
                     </div>
-                    <div class="right">
-                      <h3>John Doe</h3>
-                      <p>10 Friends</p>
+                    <div class="ml-2">
+                      <div class="h5 m-0 text-blue">@ThanhTung</div>
+                      <div class="h7 text-muted">09/07/2022</div>
                     </div>
-                  </li>
-                  <li>
-                    <div class="left">
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5
+                  class="card-title"
+                  style="margin-bottom: 5px; color: #ffa200"
+                >
+                  我爱你不知道怎么爱？
+                </h5>
+                <h5
+                  class="card-title"
+                  style="margin-bottom: 5px; color: #ffa200"
+                >
+                  何时爱？
+                </h5>
+                <h5 class="card-title" style="color: #ffa200">那里爱？</h5>
+                <div class="mb-10">
+                  <div class="row p-b-15">
+                    <div class="col-md-6">
                       <img
-                        src="https://bootdey.com/img/Content/avatar/avatar5.png"
+                        class="img-fluid width-100"
+                        src="./images/chill01.jpeg"
                         alt=""
                       />
                     </div>
-                    <div class="right">
-                      <h3>John Doe</h3>
-                      <p>10 Friends</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="left">
+                    <div class="col-md-6">
                       <img
-                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        class="img-fluid width-100"
+                        src="./images/chill02.jpeg"
                         alt=""
                       />
                     </div>
-                    <div class="right">
-                      <h3>John Doe</h3>
-                      <p>10 Friends</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="left">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card social-timeline-card">
+              <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="mr-2">
                       <img
-                        src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                        class="rounded-circle"
+                        width="45"
+                        src="./images/avatar/avatar_18032023.jpeg"
                         alt=""
                       />
                     </div>
-                    <div class="right">
-                      <h3>John Doe</h3>
-                      <p>10 Friends</p>
+                    <div class="ml-2">
+                      <div class="h5 m-0 text-blue">@ThanhTung</div>
+                      <div class="h7 text-muted">14/06/2022</div>
                     </div>
-                  </li>
-                  <li>
-                    <div class="left">
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="color: #e9310f">
+                  Chúc mừng e gái tui nha ❤️❤️
+                </h5>
+                <div class="mb-10">
+                  <div class="row p-b-15">
+                    <div class="col-md-4">
                       <img
-                        src="https://bootdey.com/img/Content/avatar/avatar4.png"
+                        class="img-fluid width-100"
+                        src="./images/graduation_01.jpeg"
                         alt=""
                       />
                     </div>
-                    <div class="right">
-                      <h3>John Doe</h3>
-                      <p>10 Friends</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="left">
+                    <div class="col-md-4">
                       <img
-                        src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                        class="img-fluid width-100"
+                        src="./images/graduation_2.jpeg"
                         alt=""
                       />
                     </div>
-                    <div class="right">
-                      <h3>John Doe</h3>
-                      <p>10 Friends</p>
+                    <div class="col-md-4">
+                      <img
+                        class="img-fluid width-100"
+                        src="./images/graduation_3.jpeg"
+                        alt=""
+                      />
                     </div>
-                  </li>
-                </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card social-timeline-card">
+              <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="mr-2">
+                      <img
+                        class="rounded-circle"
+                        width="45"
+                        src="./images/avatar/avatar_18032023.jpeg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="ml-2">
+                      <div class="h5 m-0 text-blue">@ThanhTung</div>
+                      <div class="h7 text-muted">13/04/2022</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5
+                  class="card-title"
+                  style="margin-bottom: 5px; color: #317dce"
+                >
+                  Nhìn 1 chút thì thấy dễ thương
+                </h5>
+                <h5 class="card-title" style="color: #317dce">
+                  Nhìn thêm 1 chút thấy thương cả đời 🐳
+                </h5>
+                <div class="mb-10">
+                  <div class="row p-b-15">
+                    <div class="col-md-12">
+                      <img
+                        class="img-fluid width-100"
+                        src="./images/cute.jpeg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
